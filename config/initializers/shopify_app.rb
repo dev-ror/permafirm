@@ -1,7 +1,7 @@
 ShopifyApp.configure do |config|
   config.application_name = "PermaFirm"
-  config.api_key = ENV['5eb1feca7b1d1bcaf8f89a0160822602']
-  config.secret = ENV['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']
+  config.api_key = ENV['SHOPIFY_API_KEY']
+  config.secret = ENV['SHOPIFY_API_SECRET']
   config.old_secret = ""
   config.scope = "read_products" # Consult this page for more scope options:
                                  # https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
