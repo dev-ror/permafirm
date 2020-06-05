@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'gentelella-rails'
+gem 'cancancan'
 
 
 # Reduces boot times through caching; required in config/boot.rb
