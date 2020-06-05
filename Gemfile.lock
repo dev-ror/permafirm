@@ -135,7 +135,7 @@ GEM
       activesupport (>= 3.0)
       graphql (~> 1.8)
     hashie (4.1.0)
-    i18n (1.8.2)
+    i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     icheck-rails (1.0.2.2)
       jquery-rails
