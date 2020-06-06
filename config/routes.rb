@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'import_product', to: 'products#import_product'
   devise_for :users
   root :to => 'home#index'
-  mount ShopifyApp::Engine, at: 'app'
-  get '/app' => 'settings#index'
+  mount ShopifyApp::Engine, at: '/'
+  # get '/app' => 'settings#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
