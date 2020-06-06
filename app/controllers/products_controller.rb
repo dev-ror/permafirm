@@ -63,7 +63,9 @@ class ProductsController < ApplicationController
   end
 
   def import_product
-    Shopify::ShopifyConnection.connect_to_shop('devstoring.myshopify.com', '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')
+    shop = Shop.last
+    shopify_session = ShopifyAPI::Session.new(domain: shop.shopify_domain ,api_version: ENV['API_VERSION'],token: shop.shopify_token)
+    ShopifyAPI::Base.activate_session(shopify_session)
     new_product = ShopifyAPI::Product.new
     
     new_product.title = 'Test Product'
