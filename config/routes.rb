@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :order_line_items
   resources :orders
   resources :product_variants
-  resources :products
+  resources :products do
+    collection do
+      post 'create_product_on_shopify'
+    end
+  end
   devise_for :users
   root :to => 'home#index'
   mount ShopifyApp::Engine, at: 'app'
