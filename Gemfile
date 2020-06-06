@@ -38,6 +38,10 @@ gem 'gentelella-rails'
 gem 'cancancan'
 gem 'pg'
 
+# gem 'sidekiq'
+# gem "sidekiq-cron"
+# gem 'sidekiq-failures'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

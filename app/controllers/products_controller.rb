@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :verify_authenticity_token ,only: [:create_product_on_shopify]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -59,6 +60,18 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def create_product_on_shopify
+    Shopify::ShopifyConnection.connect_to_shop('devstoring.myshopify.com', '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')
+    new_product = ShopifyAPI::Product.new
+    
+    new_product.title = 'Test Product'
+    new_product.product_type = 'test type'
+    new_product.handle = 'Test handle'
+    new_product.vendor = 'test vendor'
+
+    new_product.save
   end
 
   private
