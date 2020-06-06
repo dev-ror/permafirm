@@ -5,12 +5,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    debugger
     @products = Product.all
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    debugger
   end
 
   # GET /products/new
@@ -25,6 +27,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    debugger
     @product = Product.new(product_params)
 
     respond_to do |format|
@@ -62,7 +65,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create_product_on_shopify
+  def import_product
+    debugger
     Shopify::ShopifyConnection.connect_to_shop('devstoring.myshopify.com', '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')
     new_product = ShopifyAPI::Product.new
     
@@ -77,7 +81,7 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      # @product = Product.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
