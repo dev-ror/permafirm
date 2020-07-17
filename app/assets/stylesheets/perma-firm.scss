@@ -1,0 +1,55 @@
+.btn-position{
+  float: right;
+  margin-top: -10px;
+}
+.links{
+  color: #1a81c5;
+}
+.name_title{
+  white-space: nowrap;
+  width: 236px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 !important;
+}
+.price-product{
+  font-weight: bold;
+  font-size: 14px;
+}
+.import-container{ display: none;}
+.import-container button{
+  width: 100%;
+}
+.x_panel_product {
+  padding: 0 5px;
+}
+.x_panel_product:hover{
+  height: 430px;
+  //overflow: hidden;
+}
+.x_panel_product:hover .import-container{
+  display: block;
+}
+.widget_tally_box span .import-container{
+  text-align: left;
+}
+.ui-ribbon-container .ui-ribbon{
+  z-index: 999;
+  font-size: 13px;
+  color: #fff;
+  padding: 2px 0;
+  left: -5px;
+  top: 15px;
+  width: 128px;
+}
+.widget_tally_box p, .widget_tally_box span {
+  text-align: left;
+}
+.image-product{
+  text-align: center;
+  margin-bottom: 17px;
+}
+.image-product img{
+  height: 200px;
+  width: auto;
+}

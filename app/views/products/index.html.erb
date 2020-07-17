@@ -1,25 +1,94 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="right_col" role="main">
+  <div class="page-title">
+    <div class="title_left">
+      <h3>Products</h3>
+    </div>
+    <div class="title_right">
+      <div class="col-md-8 col-sm-8   form-group row pull-right top_search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for products to sell">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button">Search</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-md-3   widget widget_tally_box">
+        <%= link_to product  do %>
+          <div class="x_panel_product ui-ribbon-container fixed_height_390">
+            <div class="ui-ribbon-wrapper">
+              <div class="ui-ribbon">
+                30% Off
+              </div>
+            </div>
+            <div class="x_content">
+              <div class="image-product">
+                <% if product.image.first %>
+                  <img src="<%= product.image.first['src'] %>" width="100%">
+                <% end %>
+              </div>
+              <p class="name_title"><%= product.title %></p>
+              <h3 class="price-product">US $3.49</h3>
+              <div class="divider"></div>
+              <div>
+                <ul class="list-inline widget_tally">
+                  <li>
+                    <p>
+                      <span class="month">Imports </span>
+                      <span class="count">50</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span class="month">Pageviews</span>
+                      <span class="count">2</span>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <span class="month">Orders</span>
+                      <span class="count">10</span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="import-container"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Add to Import List</button></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+  </div>
 
-<%= link_to 'New Product', new_product_path %>
+  <p id="notice"><%= notice %></p>
+
+  <!--<h1>Products</h1>-->
+
+  <!--<table>-->
+  <!--  <thead>-->
+  <!--    <tr>-->
+  <!--      <th>Product</th>-->
+  <!--      <th colspan="3"></th>-->
+  <!--    </tr>-->
+  <!--  </thead>-->
+
+  <!--  <tbody>-->
+  <%# @products.each do |product| %>
+  <!--      <tr>-->
+  <!--        <td><%#= product.inspect %></td>-->
+  <!--        <td><%#= link_to 'Show', product %></td>-->
+  <!--        <td><%#= link_to 'Edit', edit_product_path(product) %></td>-->
+  <!--        <td><%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+  <!--      </tr>-->
+  <%# end %>
+  <!--  </tbody>-->
+  <!--</table>-->
+
+  <!--<br>-->
+
+  <%= link_to 'New Product', new_product_path %>
+</div>
